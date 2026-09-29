@@ -1,0 +1,60 @@
+{
+  "expo": {
+    "name": "Tuck",
+    "slug": "tuck",
+    "scheme": "tuck",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "backgroundColor": "#121436",
+    "ios": {
+      "bundleIdentifier": "app.tuck.mobile",
+      "supportsTablet": false
+    },
+    "android": {
+      "package": "app.tuck.mobile",
+      "edgeToEdgeEnabled": true,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#121436"
+      }
+    },
+    "plugins": [
+      "expo-router",
+      "expo-web-browser",
+      [
+        "expo-notifications",
+        {
+          "color": "#4636E3"
+        }
+      ],
+      [
+        "expo-speech-recognition",
+        {
+          "microphonePermission": "Tuck listens when you tap the mic so you can add tasks and check in by voice.",
+          "speechRecognitionPermission": "Tuck turns what you say into tasks."
+        }
+      ],
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#121436",
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 180
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "single",
+      "favicon": "./assets/favicon.png",
+      "name": "Tuck",
+      "themeColor": "#121436",
+      "backgroundColor": "#121436"
+    },
+    "icon": "./assets/icon.png"
+  }
+}
