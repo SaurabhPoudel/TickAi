@@ -93,6 +93,17 @@ npm test -w apps/api
 npm run typecheck -w apps/mobile
 ```
 
+### Trying the prompts
+
+`apps/api/src/scripts/try-ai.ts` sends fixed example sentences and a scripted bedtime check-in to Claude and marks each capture case ok/FAIL. It needs `ANTHROPIC_API_KEY` in `apps/api/.env`; the database isn't touched (it reads `DATABASE_URL` only because the env schema requires it).
+
+```bash
+npm run try-ai -w apps/api              # capture cases + scripted check-in
+npm run try-ai -w apps/api -- capture   # capture only
+npm run try-ai -w apps/api -- checkin   # check-in only
+npm run try-ai -w apps/api -- dry       # print the date context and schema, no API calls
+```
+
 ## API at a glance
 
 | Method | Path | What it does |

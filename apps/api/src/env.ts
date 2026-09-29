@@ -6,6 +6,8 @@ const Env = z.object({
   ANTHROPIC_API_KEY: z.string().min(1),
   CAPTURE_MODEL: z.string().default("claude-haiku-4-5-20251001"),
   CHECKIN_MODEL: z.string().default("claude-sonnet-5-5"),
+  // Thinking effort for the check-in. "low" keeps replies fast at bedtime.
+  CHECKIN_EFFORT: z.enum(["low", "medium", "high"]).default("low"),
   SUPABASE_URL: z.string().optional(),
   ALLOW_DEV_AUTH: z.string().optional().transform((v) => v === "true"),
   GOOGLE_CLIENT_ID: z.string().optional(),

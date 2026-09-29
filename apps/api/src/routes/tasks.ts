@@ -28,7 +28,7 @@ export async function taskRoutes(app: FastifyInstance) {
     const u = req.user;
     const clock = localClock(u.timezone);
     const result = await captureTasks(text, {
-      today: logicalToday(u.timezone), weekday: clock.weekday, time: clock.time, timezone: u.timezone, bedtime: u.bedtime,
+      today: logicalToday(u.timezone), time: clock.time, timezone: u.timezone, bedtime: u.bedtime,
     });
     const created = await tasks.createFromDrafts(u, result.tasks);
     return { created, followUp: result.followUp ?? null };

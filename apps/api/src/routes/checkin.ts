@@ -53,7 +53,7 @@ export async function checkinRoutes(app: FastifyInstance) {
     const clock = localClock(u.timezone);
     const turn = await checkinTurn({
       name: u.name, refs, tomorrow, transcript,
-      ctx: { today: day, weekday: clock.weekday, time: clock.time, timezone: u.timezone, bedtime: u.bedtime },
+      ctx: { today: day, time: clock.time, timezone: u.timezone, bedtime: u.bedtime },
     });
 
     // Apply what the user said.
