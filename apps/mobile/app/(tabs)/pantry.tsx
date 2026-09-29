@@ -23,14 +23,14 @@ export default function PantryScreen() {
     <ScrollView style={{ backgroundColor: t.bg }} contentContainerStyle={[column, { paddingTop: insets.top + space.xl, paddingHorizontal: space.l, paddingBottom: space.xxl }]}>
       <Txt variant="title" style={{ paddingHorizontal: space.s }}>Pantry</Txt>
       <Txt muted style={{ paddingHorizontal: space.s, marginBottom: space.xl }}>
-        Tuck remembers what you buy and how long it lasts, so your next list writes itself.
+        Hushtick remembers what you buy and how long it lasts, so your next list writes itself.
       </Txt>
 
       {pantry.isLoading && <Txt muted>Loading…</Txt>}
       {!pantry.isLoading && !items.length && (
         <View style={[styles.empty, { borderColor: t.line }]}>
           <Txt variant="heading">Nothing remembered yet</Txt>
-          <Txt muted>Tick items off a shopping list, or tell Tuck what you bought at bedtime. It learns from there.</Txt>
+          <Txt muted>Tick items off a shopping list, or tell Hushtick what you bought at bedtime. It learns from there.</Txt>
         </View>
       )}
 

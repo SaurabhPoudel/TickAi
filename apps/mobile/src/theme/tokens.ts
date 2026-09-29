@@ -1,5 +1,5 @@
 /**
- * Tuck's look follows the sky. The app is bright and crisp during the day,
+ * Hushtick's look follows the sky. The app is bright and crisp during the day,
  * warms into dusk as bedtime approaches, and turns fully to night for the check-in.
  */
 export const palette = {

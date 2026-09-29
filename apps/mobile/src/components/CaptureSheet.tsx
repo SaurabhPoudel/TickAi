@@ -16,7 +16,7 @@ import { radius, space, type as typeScale } from "@/theme/tokens";
 
 type Phase = "listening" | "typing" | "thinking" | "done";
 
-/** Talk (or type) a brain dump; Tuck splits it into tasks and shows what it made. */
+/** Talk (or type) a brain dump; Hushtick splits it into tasks and shows what it made. */
 export function CaptureSheet({ visible, onClose, startWith = "listening" }: { visible: boolean; onClose: () => void; startWith?: "listening" | "typing" }) {
   const t = useTheme();
   const qc = useQueryClient();

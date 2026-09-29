@@ -28,7 +28,7 @@ Bricolage Grotesque throughout, in four weights. A 1.25 scale from 15: 40 displa
 ## Engagement, and where it stops
 
 What we took from the research:
-- **Streaks work through loss aversion**, but in calm products they should count showing up, not performance. Tuck's streak is "nights closed," never "tasks completed."
+- **Streaks work through loss aversion**, but in calm products they should count showing up, not performance. Hushtick's streak is "nights closed," never "tasks completed."
 - **Failure should feel safe.** A missed night uses a grace night, and the copy never guilt-trips.
 - **Instant, visible feedback.** Ticking a task pops the check, buzzes, and adds a star.
 

@@ -1,18 +1,18 @@
 {
   "expo": {
-    "name": "Tuck",
-    "slug": "tuck",
-    "scheme": "tuck",
+    "name": "Hushtick",
+    "slug": "hushtick",
+    "scheme": "hushtick",
     "version": "0.1.0",
     "orientation": "portrait",
     "userInterfaceStyle": "automatic",
     "backgroundColor": "#121436",
     "ios": {
-      "bundleIdentifier": "app.tuck.mobile",
+      "bundleIdentifier": "app.hushtick.mobile",
       "supportsTablet": false
     },
     "android": {
-      "package": "app.tuck.mobile",
+      "package": "app.hushtick.mobile",
       "edgeToEdgeEnabled": true,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
@@ -31,8 +31,8 @@
       [
         "expo-speech-recognition",
         {
-          "microphonePermission": "Tuck listens when you tap the mic so you can add tasks and check in by voice.",
-          "speechRecognitionPermission": "Tuck turns what you say into tasks."
+          "microphonePermission": "Hushtick listens when you tap the mic so you can add tasks and check in by voice.",
+          "speechRecognitionPermission": "Hushtick turns what you say into tasks."
         }
       ],
       [
@@ -51,7 +51,7 @@
       "bundler": "metro",
       "output": "single",
       "favicon": "./assets/favicon.png",
-      "name": "Tuck",
+      "name": "Hushtick",
       "themeColor": "#121436",
       "backgroundColor": "#121436"
     },

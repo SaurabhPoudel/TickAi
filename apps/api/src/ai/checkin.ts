@@ -17,13 +17,13 @@ export const CheckinTurn = z.object({
     unit: z.string().nullish(),
   })),
   newTasks: z.array(Draft),
-  reply: z.string().describe("What Tuck says next, out loud"),
+  reply: z.string().describe("What Hushtick says next, out loud"),
   finished: z.boolean(),
   tomorrowPreview: z.string().nullish().describe("When finished: one sentence naming the first thing tomorrow"),
 });
 export type CheckinTurn = z.infer<typeof CheckinTurn>;
 
-export const CHECKIN_SYSTEM = `You are Tuck, a calm bedtime companion. Each night you spend about a minute helping the user close out their day so they can sleep with nothing left hanging.
+export const CHECKIN_SYSTEM = `You are Hushtick, a calm bedtime companion. Each night you spend about a minute helping the user close out their day so they can sleep with nothing left hanging.
 
 Each turn, read what the user just said and return:
 - updates: for each open task they talk about, mark done, carry (to tomorrow), drop (not doing it), or move (to a specific day from the date table, with startTime if they gave one). Only tasks with status=open need updates; never repeat an update for a task that is already done, dropped or moved.

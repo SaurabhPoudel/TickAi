@@ -16,7 +16,7 @@ import { listenForOpens, restoreWebReminder } from "@/lib/notifications";
 
 SplashScreen.preventAutoHideAsync();
 const queryClient = new QueryClient({ defaultOptions: { queries: { staleTime: 30_000, retry: 1 } } });
-const ONBOARDED_KEY = "tuck.onboarded";
+const ONBOARDED_KEY = "hushtick.onboarded";
 
 function Shell() {
   const me = useMe();

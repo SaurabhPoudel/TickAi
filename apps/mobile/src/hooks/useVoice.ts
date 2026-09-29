@@ -40,7 +40,7 @@ export function useVoice(onFinal: (text: string) => void) {
     setListening(false);
     if (e.error === "no-speech" || e.error === "aborted") return;
     setError(e.error === "not-allowed"
-      ? "Tuck needs microphone access. Turn it on in Settings, or type instead."
+      ? "Hushtick needs microphone access. Turn it on in Settings, or type instead."
       : "Didn't catch that. Tap the mic and try again.");
   });
 
@@ -48,7 +48,7 @@ export function useVoice(onFinal: (text: string) => void) {
     if (!available) { setError("Voice isn't supported in this browser. Type instead, or try Chrome or Safari."); return; }
     const perm = await ExpoSpeechRecognitionModule.requestPermissionsAsync();
     if (!perm.granted) {
-      setError("Tuck needs microphone access. Turn it on in Settings, or type instead.");
+      setError("Hushtick needs microphone access. Turn it on in Settings, or type instead.");
       return;
     }
     setTranscript("");

@@ -39,7 +39,7 @@ export async function readState(state: string) {
 export async function finishConnect(code: string, state: string) {
   const payload = await readState(state);
   const { tokens } = await oauth().getToken(code);
-  if (!tokens.refresh_token) throw new Error("Google didn't return a refresh token. Remove Tuck's access in your Google account and connect again.");
+  if (!tokens.refresh_token) throw new Error("Google didn't return a refresh token. Remove Hushtick's access in your Google account and connect again.");
   await db.update(schema.users).set({ googleRefreshToken: tokens.refresh_token }).where(eq(schema.users.id, String(payload.uid)));
 }
 
@@ -69,10 +69,10 @@ export async function syncTask(user: User, task: Task) {
   const body = {
     summary: task.status === "done" ? `✓ ${task.title}` : task.title,
     location: task.location ?? undefined,
-    description: "Added by Tuck",
+    description: "Added by Hushtick",
     start: { dateTime: start.toISOString(), timeZone: user.timezone },
     end: { dateTime: end.toISOString(), timeZone: user.timezone },
-    extendedProperties: { private: { tuckTaskId: task.id } },
+    extendedProperties: { private: { hushtickTaskId: task.id } },
   };
 
   if (task.calendarEventId) {
@@ -83,7 +83,7 @@ export async function syncTask(user: User, task: Task) {
   }
 }
 
-/** Events already on the user's calendar for a day, excluding ones Tuck created. */
+/** Events already on the user's calendar for a day, excluding ones Hushtick created. */
 export async function dayEvents(user: User, day: string) {
   const cal = calendarFor(user);
   if (!cal) return [];
@@ -94,7 +94,7 @@ export async function dayEvents(user: User, day: string) {
     singleEvents: true, orderBy: "startTime", maxResults: 50,
   });
   return (data.items ?? [])
-    .filter((e) => !e.extendedProperties?.private?.tuckTaskId && e.status !== "cancelled")
+    .filter((e) => !e.extendedProperties?.private?.hushtickTaskId && e.status !== "cancelled")
     .map((e) => ({
       id: e.id!, title: e.summary ?? "(no title)", location: e.location ?? null,
       start: e.start?.dateTime ?? e.start?.date ?? null, end: e.end?.dateTime ?? e.end?.date ?? null,

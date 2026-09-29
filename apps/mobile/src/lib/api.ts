@@ -59,7 +59,7 @@ async function request<T>(method: string, path: string, body?: unknown): Promise
   try {
     res = await fetch(`${BASE}${path}`, { method, headers, body: body === undefined ? undefined : JSON.stringify(body) });
   } catch {
-    throw new ApiError("Can't reach Tuck. Check your connection and try again.", 0);
+    throw new ApiError("Can't reach Hushtick. Check your connection and try again.", 0);
   }
   const data = await res.json().catch(() => ({}));
   if (!res.ok) throw new ApiError(data.error ?? "Something went wrong. Try again.", res.status);

@@ -57,6 +57,12 @@ def hushlist_mark(moon=MOON, line=SEA, uid="h"):
         out += f'<rect x="35" y="{y-6}" width="{w}" height="12" rx="6" fill="{line}" opacity="{op}"/>'
     return out
 
+def hushtick_mark(moon=MOON, tick=SEA, uid="t"):
+    # A bold tick with a quiet moon above it: the day's tasks, ticked off before sleep.
+    return crescent(28, 26, 14, moon, f"m{uid}") + \
+        f'<path d="M16 58 L38 79 L86 31" fill="none" stroke="{tick}" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>' + \
+        star(80, 70, 7, moon)
+
 def icon(mark, name):
     svg = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">'
            f'<rect width="1024" height="1024" rx="228" fill="{NIGHT}"/>'
@@ -91,7 +97,7 @@ def wordonly(word, name, fg, dot):
     open(f"{OUT}/{name}.svg", "w").write(
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="-4 -4 {W} {H}" width="{W}" height="{H}"><path d="{d}" fill="{fg}"/>{extra}</svg>')
 
-for word, mark in [("lullist", lullist_mark), ("hushlist", hushlist_mark)]:
+for word, mark in [("hushtick", hushtick_mark), ("lullist", lullist_mark), ("hushlist", hushlist_mark)]:
     icon(mark(uid=word[0] + "i"), word)
     lockup(word, mark, f"{word}-logo-night", NIGHT, "#FFFFFF", MOON, MOON, SEA, word[0] + "n")
     lockup(word, mark, f"{word}-logo-day", None, INK, VIOLET, VIOLET, VIOLET, word[0] + "d")

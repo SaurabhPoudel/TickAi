@@ -1,5 +1,5 @@
 {
-  "name": "@tuck/mobile",
+  "name": "@hushtick/mobile",
   "version": "0.1.0",
   "private": true,
   "main": "expo-router/entry",

@@ -1,8 +1,10 @@
-# Tuck
+<img src="docs/brand/hushtick-logo-day.svg" alt="Hushtick" height="72">
+
+# Hushtick
 
 **Plan out loud. Sleep with a clear head.**
 
-Tuck is a voice-first to-do planner for everyday life. Say everything on your plate in one breath ("get groceries, bake a cake and meet Rahul at 6") and it becomes separate tasks, with timed ones added to Google Calendar. At bedtime Tuck checks in: you tell it what got done, it carries over what didn't, and it remembers what you bought so your next grocery list writes itself.
+Hushtick is a voice-first to-do planner for everyday life. Say everything on your plate in one breath ("get groceries, bake a cake and meet Rahul at 6") and it becomes separate tasks, with timed ones added to Google Calendar. At bedtime Hushtick checks in: you tell it what got done, it carries over what didn't, and it remembers what you bought so your next grocery list writes itself.
 
 Runs on **iOS, Android and the web** from one Expo (React Native) codebase.
 
@@ -12,7 +14,7 @@ Runs on **iOS, Android and the web** from one Expo (React Native) codebase.
 
 ## What makes it different
 
-1. **Bedtime check-in by voice.** A one-minute conversation, not a checklist. Tuck speaks, you answer, it updates everything.
+1. **Bedtime check-in by voice.** A one-minute conversation, not a checklist. Hushtick speaks, you answer, it updates everything.
 2. **Honest carry-over.** Tasks you keep pushing get a gentle question: break it down, give it a time, or let it go.
 3. **Your day ends when you go to bed.** Anything before 4am still counts as the previous day.
 4. **Grocery memory.** "Last time: 2 L, 6 days ago. Usually lasts 7 days." Learned from what you tick off or mention at bedtime.
@@ -27,6 +29,7 @@ apps/
   api/      Node + Fastify + Postgres (Drizzle) + Claude API
   mobile/   Expo SDK 57 app: iOS, Android, web
 docs/       product research, design system, screenshots
+docs/brand/ logo, app icon and wordmark (SVG + PNG); generate.py rebuilds them
 ```
 
 ## Run it locally
@@ -77,7 +80,7 @@ Tasks with a time are written to the calendar and kept in sync; your existing ev
 | | Bedtime reminder |
 |---|---|
 | iOS, Android | Local notification every day at bedtime, even when the app is closed |
-| Web | Browser notification while Tuck is open in a tab (browsers can't schedule alarms for closed tabs); the Today screen also shows "Ready to tuck in?" near bedtime |
+| Web | Browser notification while Hushtick is open in a tab (browsers can't schedule alarms for closed tabs); the Today screen also shows "Ready to tuck in?" near bedtime |
 
 ## Deploy
 

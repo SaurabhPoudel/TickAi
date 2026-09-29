@@ -1,7 +1,7 @@
 import { Platform } from "react-native";
 import * as Notifications from "expo-notifications";
 
-const BEDTIME_ID = "tuck-bedtime";
+const BEDTIME_ID = "hushtick-bedtime";
 const isWeb = Platform.OS === "web";
 
 if (!isWeb) {
@@ -23,7 +23,7 @@ export async function askPermission() {
   return (await Notifications.requestPermissionsAsync()).granted;
 }
 
-/* ---------- Web: browsers can't schedule while closed, so remind while Tuck is open in a tab ---------- */
+/* ---------- Web: browsers can't schedule while closed, so remind while Hushtick is open in a tab ---------- */
 let webTimer: ReturnType<typeof setTimeout> | null = null;
 let onWebOpen: ((url: string) => void) | null = null;
 export function setWebNotificationHandler(fn: (url: string) => void) { onWebOpen = fn; }

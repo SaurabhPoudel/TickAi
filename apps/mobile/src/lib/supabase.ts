@@ -9,7 +9,7 @@ export const supabase: SupabaseClient | null = url && key
   : null;
 
 /**
- * People start using Tuck before creating an account: we sign them in anonymously
+ * People start using Hushtick before creating an account: we sign them in anonymously
  * and they can attach an email later without losing anything.
  */
 export async function accessToken(): Promise<string | null> {
@@ -21,7 +21,7 @@ export async function accessToken(): Promise<string | null> {
   return anon.session?.access_token ?? null;
 }
 
-const DEV_ID_KEY = "tuck.devUserId";
+const DEV_ID_KEY = "hushtick.devUserId";
 export async function devUserId() {
   let id = await AsyncStorage.getItem(DEV_ID_KEY);
   if (!id) {

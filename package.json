@@ -1,5 +1,5 @@
 {
-  "name": "tuck",
+  "name": "hushtick",
   "private": true,
   "workspaces": ["apps/*"],
   "scripts": {

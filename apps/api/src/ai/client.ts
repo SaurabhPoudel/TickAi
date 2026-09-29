@@ -21,7 +21,7 @@ export async function callStructured<T extends z.ZodType>(opts: {
   /** Thinking effort. Ignored on Haiku 4.5, which doesn't accept it. */
   effort?: Effort;
 }): Promise<z.infer<T>> {
-  // The API needs the conversation to start with the user. The check-in starts with Tuck speaking.
+  // The API needs the conversation to start with the user. The check-in starts with Hushtick speaking.
   const messages: Msg[] = opts.messages[0]?.role === "assistant"
     ? [{ role: "user", content: "(I opened the bedtime check-in.)" }, ...opts.messages]
     : opts.messages;

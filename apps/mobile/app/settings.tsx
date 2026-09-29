@@ -64,19 +64,19 @@ export default function Settings() {
 
       <View style={styles.group}>
         <Txt variant="heading">Your name</Txt>
-        <TextInput value={name} onChangeText={setName} placeholder="What Tuck calls you" placeholderTextColor={t.muted}
+        <TextInput value={name} onChangeText={setName} placeholder="What Hushtick calls you" placeholderTextColor={t.muted}
           style={[typeScale.body, styles.input, { color: t.text, backgroundColor: t.surface }]} />
       </View>
 
       <View style={styles.group}>
         <Txt variant="heading">Bedtime check-in</Txt>
-        <Txt muted>Tuck nudges you once, at this time. Your day ends when you check in, not at midnight.</Txt>
+        <Txt muted>Hushtick nudges you once, at this time. Your day ends when you check in, not at midnight.</Txt>
         <BedtimePicker value={bedtime} onChange={setBedtime} />
       </View>
 
       <View style={[styles.group, styles.switchRow]}>
         <View style={{ flex: 1 }}>
-          <Txt variant="heading">Tuck talks back</Txt>
+          <Txt variant="heading">Hushtick talks back</Txt>
           <Txt muted>Hear the check-in out loud, so you can answer without looking.</Txt>
         </View>
         <Switch value={voice} onValueChange={setVoice} trackColor={{ true: t.primary }} />

@@ -89,7 +89,7 @@ async function runCheckin() {
     "that's it, goodnight",
   ];
   const transcript: ChatTurn[] = [{ role: "assistant", content: "Evening. Today you had get groceries, bake the cake, meet Rahul and call the bank. How did it go?" }];
-  console.log(`\nTuck: ${transcript[0].content}`);
+  console.log(`\nHushtick: ${transcript[0].content}`);
   for (const line of userLines) {
     transcript.push({ role: "user", content: line });
     console.log(`You:  ${line}`);
@@ -109,7 +109,7 @@ async function runCheckin() {
       turn.purchases.length && `bought ${turn.purchases.map((p) => p.name).join(", ")}`,
       turn.newTasks.length && `new ${turn.newTasks.map((t) => t.title).join(", ")}`,
     ].filter(Boolean).join(" | ");
-    console.log(`Tuck: ${turn.reply}   (${Date.now() - started} ms)`);
+    console.log(`Hushtick: ${turn.reply}   (${Date.now() - started} ms)`);
     if (bits) console.log(`      ${bits}`);
     if (turn.finished) {
       console.log(`      finished. Preview: ${turn.tomorrowPreview ?? "(none)"}`);

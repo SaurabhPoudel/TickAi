@@ -20,7 +20,7 @@ import { keys } from "@/hooks/queries";
 import { useLayout } from "@/lib/layout";
 import { radius, space, type as typeScale } from "@/theme/tokens";
 
-const ONBOARDED_KEY = "tuck.onboarded";
+const ONBOARDED_KEY = "hushtick.onboarded";
 
 /**
  * Four quick steps, and the third one is the product itself:
@@ -65,7 +65,7 @@ function Flow() {
           {step === 0 && (
             <>
               <Txt variant="display">Plan out loud. Sleep with a clear head.</Txt>
-              <Txt muted>Tell Tuck what's on your plate. At bedtime it asks how the day went, carries over what's left, and remembers what you buy.</Txt>
+              <Txt muted>Tell Hushtick what's on your plate. At bedtime it asks how the day went, carries over what's left, and remembers what you buy.</Txt>
               <Button label="Get started" onPress={next} />
             </>
           )}

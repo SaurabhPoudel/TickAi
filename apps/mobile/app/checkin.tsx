@@ -90,7 +90,7 @@ function Checkin() {
 
   const voice = useVoice(send);
 
-  /** Tuck talks, then listens: the check-in works with your phone on the nightstand. */
+  /** Hushtick talks, then listens: the check-in works with your phone on the nightstand. */
   const say = useCallback((text: string) => {
     setMessage(text);
     if (!voiceOn) { setPhase("idle"); return; }

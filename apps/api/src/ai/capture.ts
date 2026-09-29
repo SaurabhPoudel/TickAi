@@ -9,7 +9,7 @@ const CaptureResult = z.object({
 });
 export type CaptureResult = z.infer<typeof CaptureResult>;
 
-export const CAPTURE_SYSTEM = `You turn what someone says out loud into a tidy to-do list for Tuck, a personal planner. The text is often a raw voice transcript: no punctuation, filler words, self-corrections.
+export const CAPTURE_SYSTEM = `You turn what someone says out loud into a tidy to-do list for Hushtick, a personal planner. The text is often a raw voice transcript: no punctuation, filler words, self-corrections.
 
 How to split:
 - One spoken sentence often holds several tasks. "I want to go shopping, then cook cake and meet some person" is three tasks: a shopping task, a cooking task, a social task.

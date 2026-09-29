@@ -13,8 +13,8 @@ const Env = z.object({
   GOOGLE_CLIENT_ID: z.string().optional(),
   GOOGLE_CLIENT_SECRET: z.string().optional(),
   GOOGLE_REDIRECT_URI: z.string().optional(),
-  APP_REDIRECT_URI: z.string().default("tuck://settings"),
-  // Where the web app is hosted, comma-separated, e.g. https://tuck.app,http://localhost:8081
+  APP_REDIRECT_URI: z.string().default("hushtick://settings"),
+  // Where the web app is hosted, comma-separated, e.g. https://hushtick.app,http://localhost:8081
   WEB_APP_ORIGINS: z.string().default("http://localhost:8081").transform((v) => v.split(",").map((s) => s.trim()).filter(Boolean)),
 });
 

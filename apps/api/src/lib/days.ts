@@ -1,5 +1,5 @@
 /**
- * Tuck's "day" ends when you go to bed, not at midnight.
+ * Hushtick's "day" ends when you go to bed, not at midnight.
  * Anything before 4am still belongs to the previous day, so night owls
  * who check in at 1:30am close out the right day.
  */
