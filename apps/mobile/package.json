@@ -9,7 +9,8 @@
     "android": "expo run:android",
     "typecheck": "tsc --noEmit",
     "web": "expo start --web",
-    "build:web": "expo export --platform web"
+    "build:web": "expo export --platform web",
+    "build:demo": "EXPO_PUBLIC_DEMO=true expo export --platform web --output-dir dist-demo"
   },
   "dependencies": {
     "@expo-google-fonts/bricolage-grotesque": "^0.4.1",

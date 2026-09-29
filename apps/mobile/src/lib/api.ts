@@ -1,4 +1,5 @@
 import { accessToken, devUserId, supabase } from "./supabase";
+import { demoRequest } from "./demo";
 import { timezone } from "./time";
 
 const BASE = process.env.EXPO_PUBLIC_API_URL ?? "http://localhost:8787";
@@ -41,7 +42,12 @@ export class ApiError extends Error {
   constructor(message: string, public status: number) { super(message); }
 }
 
+const DEMO = process.env.EXPO_PUBLIC_DEMO === "true";
+
 async function request<T>(method: string, path: string, body?: unknown): Promise<T> {
+  if (DEMO) {
+    try { return (await demoRequest(method, path, body ?? {})) as T; } catch (e) { throw new ApiError((e as Error).message, 400); }
+  }
   const headers: Record<string, string> = { "content-type": "application/json", "x-timezone": timezone() };
   if (supabase) {
     const token = await accessToken();
